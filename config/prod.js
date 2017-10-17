@@ -2,13 +2,13 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./base');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = function(env) {
   return webpackMerge(baseConfig(), {
     entry: {
-      app: './javascript/App.js'
+      app: './index.js'
     },
-    devtool: 'cheap-module-source-map',
     module: {
       rules: [
         {
@@ -18,15 +18,9 @@ module.exports = function(env) {
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: true,
                   modules: true,
-                  importLoaders: 2
-                }
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: true
+                  importLoaders: 2,
+                  localIdentName: '[local]___[hash:base64]'
                 }
               },
               {
@@ -38,6 +32,12 @@ module.exports = function(env) {
                     ];
                   }
                 }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  includePaths: ['node_modules/foundation-sites/scss', 'src/styles']
+                }
               }
             ]
           })
@@ -45,30 +45,49 @@ module.exports = function(env) {
       ]
     },
     plugins: [
-      new ExtractTextPlugin({
-        filename: '../css/style.min.css',
-        allChunks: true
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }),
+      new webpack.optimize.ModuleConcatenationPlugin(),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        filename: 'vendor.min.js',
+        minChunks (module) {
+          return module.context && module.context.indexOf('node_modules') >= 0;
+        }
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          screw_ie8: true,
+          conditionals: true,
+          unused: true,
+          comparisons: true,
+          sequences: true,
+          dead_code: true,
+          evaluate: true,
+          if_return: true,
+          join_vars: true
+        },
+        output: {
+          comments: false
+        }
       }),
       new webpack.LoaderOptionsPlugin({
         minimize: true,
         debug: false
       }),
-      new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': JSON.stringify('production')
-        }
+      new webpack.HashedModuleIdsPlugin(),
+      new ExtractTextPlugin({
+        filename: '../css/app.min.css',
+        allChunks: true
       }),
-      new webpack.optimize.UglifyJsPlugin({
-        beautify: false,
-        mangle: {
-          screw_ie8: true,
-          keep_fnames: true
-        },
-        compress: {
-          screw_ie8: true,
-          drop_console: false
-        },
-        comments: false
+      new CompressionPlugin({
+        asset: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
+        threshold: 10240,
+        minRatio: 0.8
       })
     ]
   })
