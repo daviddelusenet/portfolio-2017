@@ -8,7 +8,7 @@ const DemographicInformationListItem = (props) => {
       <p styleName="DemographicInformationListItem__label">{props.label}</p>
       <p styleName="DemographicInformationListItem__value">
         {props.url ? (
-          <a styleName="DemographicInformationListItem__link" href={props.url} target="_blank">{props.value}</a>
+          <a styleName="DemographicInformationListItem__link" href={props.url} target={props.target}>{props.value}</a>
         ) : (props.value)}
       </p>
     </div>

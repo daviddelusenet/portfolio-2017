@@ -22,11 +22,11 @@ class App extends React.Component {
           {"label": "Occupation", "value": "Front-end developer"},
           {"label": "Date of birth", "value": "June 24, 1992"},
           {"label": "Nationality", "value": "Dutch"},
-          {"label": "Address", "value": "Preangerstraat 13A, 1095 HA, Amsterdam", "url": "https://goo.gl/maps/fWH6aeKAkEH2"},
-          {"label": "Mobile", "value": "06 - 50 46 96 00", "url": "+31650469600"},
-          {"label": "Email", "value": "david@lusenet.nl", "url": "david@lusenet.nl"},
-          {"label": "GitHub", "value": "Check out the code of this website", "url": "https://github.com/daviddelusenet"},
-          {"label": "LinkedIn", "value": "Let's connect", "url": "https://www.linkedin.com/in/david-de-lusenet-31b838111"}
+          {"label": "Address", "value": "Preangerstraat 13A, 1095 HA, Amsterdam", "url": "https://goo.gl/maps/fWH6aeKAkEH2", "target": "_blank"},
+          {"label": "Mobile", "value": "06 - 50 46 96 00", "url": "tel:+31650469600", "target": "_self"},
+          {"label": "Email", "value": "david@lusenet.nl", "url": "mailto:david@lusenet.nl",  "target": "_self"},
+          {"label": "GitHub", "value": "Check out my code", "url": "https://github.com/daviddelusenet", "target": "_blank"},
+          {"label": "LinkedIn", "value": "Let's connect", "url": "https://www.linkedin.com/in/david-de-lusenet-31b838111", "target": "_blank"}
         ]} avatar="/img/avatar.png" />
         <Title text="Personal information" />
         <Paragraph text="Since a young age I was always interested in computers. However, I didn't started developing until about seven years ago when I started with my education Communication and Multimedia Design at the University of Applied Sciences Amsterdam." />
