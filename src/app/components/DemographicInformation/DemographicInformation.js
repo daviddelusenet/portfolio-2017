@@ -19,15 +19,15 @@ class DemographicInformation extends React.Component {
 
     return(
       <div styleName="DemographicInformation">
-        <div styleName="DemographicInformation__text">
-          <h1 styleName="DemographicInformation__title">{this.props.title}</h1>
+        <h1 styleName="DemographicInformation__title">{this.props.title}</h1>
+        <div styleName="DemographicInformation__inner">
           <ul styleName="DemographicInformation__list">
             {DemographicInformationInfoContent}
           </ul>
+          <figure styleName="DemographicInformation__avatar">
+            <img styleName="DemographicInformation__avatar__image" src={this.props.avatar} />
+          </figure>
         </div>
-        <figure styleName="DemographicInformation__avatar">
-          <img styleName="DemographicInformation__avatar__image" src={this.props.avatar} />
-        </figure>
       </div>
     );
   }

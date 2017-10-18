@@ -1,6 +1,15 @@
 @import 'shared/shared';
 
 .Paragraph {
-  margin: 0 0 30px;
-  font-size: rem-calc(18px);
+  margin: 0 0 20px;
+  font-size: rem-calc(16px);
+
+  @include breakpoint(medium up) {
+    font-size: rem-calc(17px);
+  }
+
+  @include breakpoint(large up) {
+    margin: 0 0 30px;
+    font-size: rem-calc(18px);
+  }
 }

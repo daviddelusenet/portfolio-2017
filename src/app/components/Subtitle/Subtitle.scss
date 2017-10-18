@@ -1,6 +1,14 @@
 @import 'shared/shared';
 
 .Subtitle {
-  font-size: rem-calc(18px);
+  font-size: rem-calc(16px);
   font-style: italic;
+
+  @include breakpoint(medium up) {
+    font-size: rem-calc(17px);
+  }
+
+  @include breakpoint(large up) {
+    font-size: rem-calc(18px);
+  }
 }

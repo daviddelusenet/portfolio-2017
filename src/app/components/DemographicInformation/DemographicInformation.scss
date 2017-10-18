@@ -1,33 +1,61 @@
 @import 'shared/shared';
 
 .DemographicInformation {
-  display: flex;
   padding: 60px 0 30px;
-  flex-wrap: nowrap;
 }
 
-  .DemographicInformation__text {
-    width: 70%;
-    flex: 0 0 auto;
+  .DemographicInformation__title {
+    margin: 0 0 20px;
+    font-family: $ff-old-standard-tt;
+    font-size: rem-calc(36px);
+    line-height: 1.1;
+
+    @include breakpoint(medium up) {
+      font-size: rem-calc(40px);
+    }
+
+    @include breakpoint(large up) {
+      font-size: rem-calc(48px);
+    }
   }
 
-    .DemographicInformation__title {
-      margin: 0 0 20px;
-      font-family: $ff-old-standard-tt;
-      font-size: rem-calc(48px);
-      line-height: 1.1;
+  .DemographicInformation__inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint(large up) {
+      align-items: center;
+      flex-wrap: nowrap;
     }
+  }
 
     .DemographicInformation__list {
       display: block;
-    }
-
-  .DemographicInformation__avatar {
-    width: 30%;
-    flex: 0 0 auto;
-  }
-
-    .DemographicInformation__avatar__image {
-      display: block;
       width: 100%;
+      flex: 1 1 auto;
+      order: 2;
+
+      @include breakpoint(large up) {
+        padding: 0 40px 0 0;
+        order: 1;
+      }
     }
+
+    .DemographicInformation__avatar {
+      margin: 0 0 20px;
+      flex: 1 1 auto;
+      order: 1;
+
+      @include breakpoint(large up) {
+        max-width: 200px;
+        margin: 0;
+        flex: 0 0 auto;
+        order: 2;
+      }
+    }
+
+      .DemographicInformation__avatar__image {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+      }

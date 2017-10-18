@@ -1,23 +1,41 @@
 @import 'shared/shared';
 
 .DemographicInformationListItem {
-  display: flex;
-  flex-wrap: nowrap;
+  @include breakpoint(medium up) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 }
 
   .DemographicInformationListItem__label,
   .DemographicInformationListItem__value {
-    font-size: rem-calc(18px);
+    font-size: rem-calc(16px);
     flex: 0 0 auto;
+
+    @include breakpoint(medium up) {
+      font-size: rem-calc(17px);
+    }
+
+    @include breakpoint(large up) {
+      font-size: rem-calc(18px);
+    }
   }
 
   .DemographicInformationListItem__label {
-    width: 30%;
+    @include breakpoint(medium up) {
+      width: 30%;
+      padding: 0 20px 0 0;
+    }
   }
 
   .DemographicInformationListItem__value {
-    width: 70%;
+    margin: 0 0 10px;
     font-style: italic;
+
+    @include breakpoint(medium up) {
+      width: 70%;
+      margin: 0;
+    }
   }
 
     .DemographicInformationListItem__link {

@@ -29,7 +29,7 @@ class App extends React.Component {
           {"label": "LinkedIn", "value": "Let's connect", "url": "https://www.linkedin.com/in/david-de-lusenet-31b838111"}
         ]} avatar="/img/avatar.png" />
         <Title text="Personal information" />
-        <Paragraph text="Since a young age I was always interested in computers. I didn't started developing until about seven years ago when I started with my education Communication and Multimedia Design at the University of Applied Sciences Amsterdam." />
+        <Paragraph text="Since a young age I was always interested in computers. However, I didn't started developing until about seven years ago when I started with my education Communication and Multimedia Design at the University of Applied Sciences Amsterdam." />
         <Paragraph text="During my first job at a company called Atabix Solutions I learned a lot of my basic development skills. At the time that I was working there Atabix was still an up and coming agency which gave me the opportunity to have a lot of responsibility." />
         <Paragraph text="After working here for almost four years I needed to do a graduation internship to finish my education. I decided to do this at Momkai, where I'm still working until this very day." />
         <Title text="Working experience" />
@@ -68,7 +68,8 @@ class App extends React.Component {
           {"text": "Twig"},
           {"text": "PHP"},
           {"text": "MySQL"},
-          {"text": "GIT"}
+          {"text": "GIT"},
+          {"text": "Zurb Foundation"}
         ]} />
         <Paragraph text="Tools I've worked with in the past:" />
         <List items={[
@@ -76,7 +77,8 @@ class App extends React.Component {
           {"text": "Gulp"},
           {"text": "Grunt"},
           {"text": "Smarty"},
-          {"text": "jQuery"}
+          {"text": "jQuery"},
+          {"text": "Twitter Bootstrap"}
         ]} />
         <Title text="Personal interests" />
         <Paragraph text="In my free time I spend a lot of time playing and watching basketball. I can't get enough of it, the NBA is just amazing to watch." />

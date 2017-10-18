@@ -1,9 +1,18 @@
 @import 'shared/shared';
 
 .Title {
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   font-family: $ff-old-standard-tt;
-  font-size: rem-calc(32px);
+  font-size: rem-calc(24px);
   line-height: 1.2;
   border-bottom: 1px solid $c-black;
+
+  @include breakpoint(medium up) {
+    font-size: rem-calc(28px);
+  }
+
+  @include breakpoint(medium up) {
+    margin: 0 0 20px;
+    font-size: rem-calc(32px);
+  }
 }
