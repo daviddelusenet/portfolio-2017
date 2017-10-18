@@ -1,0 +1,31 @@
+@import 'shared/shared';
+
+.DemographicInformationListItem {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+  .DemographicInformationListItem__label,
+  .DemographicInformationListItem__value {
+    font-size: rem-calc(18px);
+    flex: 0 0 auto;
+  }
+
+  .DemographicInformationListItem__label {
+    width: 30%;
+  }
+
+  .DemographicInformationListItem__value {
+    width: 70%;
+    font-style: italic;
+  }
+
+    .DemographicInformationListItem__link {
+      @include underline($c-alabastar, $c-black, true, 90%);
+      text-decoration: none;
+      color: $c-black;
+
+      &:hover {
+        @include underline-animate();
+      }
+    }

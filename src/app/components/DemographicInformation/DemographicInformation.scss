@@ -1,0 +1,33 @@
+@import 'shared/shared';
+
+.DemographicInformation {
+  display: flex;
+  padding: 60px 0 30px;
+  flex-wrap: nowrap;
+}
+
+  .DemographicInformation__text {
+    width: 70%;
+    flex: 0 0 auto;
+  }
+
+    .DemographicInformation__title {
+      margin: 0 0 20px;
+      font-family: $ff-old-standard-tt;
+      font-size: rem-calc(48px);
+      line-height: 1.1;
+    }
+
+    .DemographicInformation__list {
+      display: block;
+    }
+
+  .DemographicInformation__avatar {
+    width: 30%;
+    flex: 0 0 auto;
+  }
+
+    .DemographicInformation__avatar__image {
+      display: block;
+      width: 100%;
+    }

@@ -1,0 +1,9 @@
+@import 'shared/shared';
+
+.Title {
+  margin: 0 0 20px;
+  font-family: $ff-old-standard-tt;
+  font-size: rem-calc(32px);
+  line-height: 1.2;
+  border-bottom: 1px solid $c-black;
+}
