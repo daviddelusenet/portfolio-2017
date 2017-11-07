@@ -1,25 +1,27 @@
 @import 'shared/shared';
 
 .List {
-  margin: 0 0 20px;
+  margin: 0 0 30px;
   font-size: rem-calc(16px);
+  font-weight: 300;
 
   @include breakpoint(medium up) {
-    font-size: rem-calc(17px);
-  }
-
-  @include breakpoint(large up) {
-    margin: 0 0 30px;
-    font-size: rem-calc(18px);
+    margin: 0 0 40px;
+    font-size: rem-calc(24px);
   }
 }
 
   .List__item {
-    display: block;
+    margin: 0 0 0 26px;
+    list-style-type: disc;
+
+    @include breakpoint(medium up) {
+      margin: 0 0 0 36px;
+    }
   }
 
     .List__item__link {
-      @include underline($c-alabastar, $c-black, true, 90%);
+      @include underline($c-alabastar, $c-black, true, 91%);
       text-decoration: none;
       color: $c-black;
 

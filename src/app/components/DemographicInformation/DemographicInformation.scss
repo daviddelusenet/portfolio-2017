@@ -2,20 +2,34 @@
 
 .DemographicInformation {
   padding: 60px 0 30px;
+
+  @include breakpoint(medium up) {
+    padding: 80px 0 40px;
+  }
 }
 
   .DemographicInformation__title {
-    margin: 0 0 20px;
-    font-family: $ff-old-standard-tt;
-    font-size: rem-calc(36px);
+    font-family: $ff-source-serif;
+    font-size: rem-calc(40px);
+    font-weight: bold;
     line-height: 1.1;
 
     @include breakpoint(medium up) {
-      font-size: rem-calc(40px);
+      font-size: rem-calc(48px);
     }
 
     @include breakpoint(large up) {
-      font-size: rem-calc(48px);
+      font-size: rem-calc(64px);
+    }
+  }
+
+  .DemographicInformation__subtitle {
+    margin: 0 0 20px;
+    font-size: rem-calc(24px);
+    line-height: 1.1;
+
+    @include breakpoint(medium up) {
+      font-size: rem-calc(32px);
     }
   }
 

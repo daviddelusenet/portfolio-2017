@@ -20,6 +20,7 @@ class DemographicInformation extends React.Component {
     return(
       <div styleName="DemographicInformation">
         <h1 styleName="DemographicInformation__title">{this.props.title}</h1>
+        <h2 styleName="DemographicInformation__subtitle">{this.props.occupation}</h2>
         <div styleName="DemographicInformation__inner">
           <ul styleName="DemographicInformation__list">
             {DemographicInformationInfoContent}

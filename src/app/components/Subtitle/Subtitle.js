@@ -4,11 +4,12 @@ import './Subtitle.scss';
 
 const Subtitle = (props) => {
   return(
-    <p styleName="Subtitle">{props.text}</p>
+    <p styleName="Subtitle"><span styleName="Subtitle__date">{props.date}</span> {props.text}</p>
   );
 };
 
 Subtitle.propTypes = {
+  date: PropTypes.string,
   text: PropTypes.string.isRequired
 };
 

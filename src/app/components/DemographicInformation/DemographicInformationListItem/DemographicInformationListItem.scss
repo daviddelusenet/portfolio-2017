@@ -10,18 +10,17 @@
   .DemographicInformationListItem__label,
   .DemographicInformationListItem__value {
     font-size: rem-calc(16px);
+    font-weight: 300;
     flex: 0 0 auto;
 
     @include breakpoint(medium up) {
-      font-size: rem-calc(17px);
-    }
-
-    @include breakpoint(large up) {
       font-size: rem-calc(18px);
     }
   }
 
   .DemographicInformationListItem__label {
+    font-weight: 400;
+
     @include breakpoint(medium up) {
       width: 30%;
       padding: 0 20px 0 0;
@@ -39,7 +38,7 @@
   }
 
     .DemographicInformationListItem__link {
-      @include underline($c-alabastar, $c-black, true, 90%);
+      @include underline($c-alabastar, $c-black, true, 91%);
       text-decoration: none;
       color: $c-black;
 
